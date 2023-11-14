@@ -6,15 +6,15 @@
     This obfuscation method can be useful when dealing with entropy-based malware detection tools.
 #>
 param (
-    [string]$wordFile,
+    [string]$wordListPath,
     [string]$inputString
 )
-if ((-not $wordFile) -or (-not $inputString)) {
-    Write-Host "Usage: obfuscator.ps1 -wordFile <path> -inputString <path>"
+if ((-not $wordListPath) -or (-not $inputString)) {
+    Write-Host "Usage: LowEntropyObfuscator.ps1 -wordListPath <path> -inputString <string>"
     exit
 }
 # read unique words from file
-$uniqueWords = $(Get-Content $wordFile | Sort-Object | Get-Unique | Select-Object -First 256)
+$uniqueWords = $(Get-Content $wordListPath | Sort-Object | Get-Unique | Select-Object -First 256)
 # create an empty list
 $wordList = @()
 # add each word to the list
