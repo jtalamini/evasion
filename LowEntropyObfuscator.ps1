@@ -2,7 +2,7 @@
 .SYNOPSIS
     PowerShell script used to implement low-entropy strings obfuscation.
 .DESCRIPTION
-    This script allows to obfuscate a given string using arbitrary wordlist. The resulting list can be fed to a deobfuscator based on the same wordlist to retrieve the original string.
+    This script allows to obfuscate a given string using arbitrary wordlist. The resulting list can be fed to a de-obfuscator script based on the same wordlist to retrieve the original string.
     This obfuscation method can be useful when dealing with entropy-based malware detection tools.
 #>
 param (
